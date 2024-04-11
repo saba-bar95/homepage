@@ -11,7 +11,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "webpack template",
+      title: "Homepage",
+      template: "./src/index.html",
     }),
   ],
   devtool: "inline-source-map",
@@ -20,6 +21,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: "html-loader",
+      },
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
