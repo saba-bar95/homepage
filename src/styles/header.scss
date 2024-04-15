@@ -1,9 +1,11 @@
+@use "variables" as var;
+
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 40px 0;
   gap: 30px;
 
   .background {
@@ -19,7 +21,7 @@ header {
   .image-container {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: relative;
-    animation: fadeIn 5s forwards;
+    animation: slideLeft 2.5s forwards, fadeIn 2.5s forwards;
 
     img {
       border-radius: 10px;
@@ -27,16 +29,17 @@ header {
     }
 
     .name-container {
-      color: #e2e8f0;
       position: absolute;
       top: 75%;
       left: 50%;
-      transform: translate(-50%, -50%);
       width: 100%;
+      color: var.$heading-light-color;
+      transform: translate(-50%, -50%);
       padding: 0 20px;
 
       .name {
-        font-size: calc(1.5vw + 1.5vh + 10vmin);
+        font-family: var.$headings-font;
+        animation: growText 2s forwards, fadeIn 2s forwards;
       }
     }
   }
@@ -45,11 +48,16 @@ header {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    animation: slideRight 2.5s forwards, fadeIn 2.5s forwards;
+    animation-delay: 1s;
+    position: relative;
+    opacity: 0;
 
     h1 {
       font-size: calc(1.5vw + 1.5vh + 6vmin);
       text-align: center;
-      color: #374151;
+      font-family: var.$headings-font;
+      color: var.$heading-dark-color;
     }
 
     .about {
@@ -57,7 +65,7 @@ header {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      font-family: "Roboto", sans-serif;
+      font-family: var.$text-font;
     }
 
     .references {
@@ -75,10 +83,36 @@ header {
 
   @keyframes fadeIn {
     0% {
-      opacity: 0.1;
+      opacity: 0;
     }
     100% {
       opacity: 1;
+    }
+  }
+  @keyframes slideLeft {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+  @keyframes slideRight {
+    0% {
+      right: -50%;
+      opacity: 0;
+    }
+    100% {
+      right: 0%;
+      opacity: 1;
+    }
+  }
+  @keyframes growText {
+    0% {
+      font-size: calc(1.5vw + 1.5vh + 5vmin);
+    }
+    100% {
+      font-size: calc(1.5vw + 1.5vh + 10vmin);
     }
   }
 }
