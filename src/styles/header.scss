@@ -7,6 +7,7 @@ header {
   align-items: center;
   padding: 40px;
   gap: 30px;
+  overflow: hidden;
 
   .background {
     background-color: #0891b2;
@@ -100,11 +101,9 @@ header {
   @keyframes slideRight {
     0% {
       right: -50%;
-      opacity: 0;
     }
     100% {
       right: 0%;
-      opacity: 1;
     }
   }
   @keyframes growText {
@@ -113,6 +112,74 @@ header {
     }
     100% {
       font-size: calc(1.5vw + 1.5vh + 10vmin);
+    }
+  }
+}
+@media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
+  header {
+    .background {
+      height: 80vw;
+    }
+
+    .image-container {
+      z-index: 1;
+      box-shadow: none;
+
+      img {
+        width: 50%;
+      }
+
+      .name-container {
+        left: 75%;
+        top: 15%;
+        padding: 0;
+
+        .name {
+          font-size: calc(1.5vw + 1.5vh + 4vmin);
+        }
+      }
+    }
+
+    .about-container {
+      position: absolute;
+      width: 80%;
+      top: 30%;
+      left: 10%;
+      animation: slide 2.5s forwards;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: #ffffff;
+      padding: 80px 40px 100px 40px;
+
+      h1 {
+        font-size: calc(1.5vw + 1.5vh + 3vmin);
+      }
+
+      .about {
+        font-size: calc(1.5vw + 1.5vh);
+      }
+
+      .references {
+        display: none;
+      }
+    }
+
+    @keyframes growText {
+      0% {
+        font-size: calc(1.5vw + 1.5vh + 1vmin);
+      }
+      100% {
+        font-size: calc(1.5vw + 1.5vh + 4vmin);
+      }
+    }
+    @keyframes slide {
+      0% {
+        opacity: 0;
+        left: 90%;
+      }
+      100% {
+        opacity: 1;
+        left: 10%;
+      }
     }
   }
 }

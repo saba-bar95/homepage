@@ -12,13 +12,15 @@ main {
   }
 
   .projects-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 30px;
 
     .project {
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border-radius: 10px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out 0.5s;
 
       .screenshot {
         width: 100%;
@@ -44,9 +46,30 @@ main {
 
           img {
             width: 20px;
+            &:hover {
+              transform: scale(1.2);
+            }
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
+  main {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  main {
+    .projects-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 100px;
     }
   }
 }

@@ -14,3 +14,20 @@ body {
   font-family: var.$text-font;
   color: var.$body-text-dark-color;
 }
+
+.landmark {
+  opacity: 0;
+  transition: opacity 1s ease-in-out 0.5s;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+@media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+  }
+}
