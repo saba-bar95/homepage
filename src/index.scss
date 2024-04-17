@@ -13,6 +13,9 @@
 body {
   font-family: var.$text-font;
   color: var.$body-text-dark-color;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .landmark {
@@ -26,8 +29,12 @@ body {
 
 @media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
   body {
-    display: flex;
-    flex-direction: column;
-    gap: 250px;
+    gap: 75px;
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  body {
+    gap: 100px;
   }
 }

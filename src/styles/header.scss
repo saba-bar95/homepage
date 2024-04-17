@@ -1,184 +1,175 @@
 @use "variables" as var;
 
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  gap: 30px;
+  padding: 40px 40px 0 40px;
   overflow: hidden;
+  position: relative;
 
   .background {
     background-color: #0891b2;
-    clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, -140% 162%);
+    clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, 0% 100%);
     width: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     z-index: -1;
     height: 100vw;
   }
 
-  .image-container {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    position: relative;
-    animation: slideLeft 2.5s forwards, fadeIn 2.5s forwards;
-
-    img {
-      border-radius: 10px;
-      width: 100%;
-    }
-
-    .name-container {
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      width: 100%;
-      color: var.$heading-light-color;
-      transform: translate(-50%, -50%);
-      padding: 0 20px;
-
-      .name {
-        font-family: var.$headings-font;
-        animation: growText 2s forwards, fadeIn 2s forwards;
-      }
-    }
-  }
-
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    animation: slideRight 2.5s forwards, fadeIn 2.5s forwards;
-    animation-delay: 1s;
-    position: relative;
-    opacity: 0;
-
-    h1 {
-      font-size: calc(1.5vw + 1.5vh + 6vmin);
-      text-align: center;
-      font-family: var.$headings-font;
-      color: var.$heading-dark-color;
-    }
-
-    .about {
-      font-size: calc(1.5vw + 1.5vh + 1vmin);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      font-family: var.$text-font;
-    }
-
-    .references {
-      text-align: center;
-    }
-
-    a {
-      cursor: pointer;
-
-      img {
-        width: 40px;
-      }
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes slideLeft {
-    0% {
-      left: -50%;
-    }
-    100% {
-      left: 0%;
-    }
-  }
-  @keyframes slideRight {
-    0% {
-      right: -50%;
-    }
-    100% {
-      right: 0%;
-    }
-  }
-  @keyframes growText {
-    0% {
-      font-size: calc(1.5vw + 1.5vh + 5vmin);
-    }
-    100% {
-      font-size: calc(1.5vw + 1.5vh + 10vmin);
-    }
-  }
-}
-@media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
-  header {
-    .background {
-      height: 80vw;
-    }
-
+  .info-container {
     .image-container {
-      z-index: 1;
-      box-shadow: none;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
 
       img {
-        width: 50%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        width: 80%;
       }
 
       .name-container {
-        left: 75%;
-        top: 15%;
-        padding: 0;
-
-        .name {
-          font-size: calc(1.5vw + 1.5vh + 4vmin);
-        }
+        position: absolute;
+        bottom: 0;
+        left: 6%;
+        color: var.$heading-light-color;
+        font-family: var.$headings-font;
+        padding: 15px 30px;
+        width: 100%;
+        font-size: calc(1.5vw + 1.5vh + 6vmin);
+        text-align: left;
       }
     }
 
     .about-container {
-      position: absolute;
-      width: 80%;
-      top: 30%;
-      left: 10%;
-      animation: slide 2.5s forwards;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      background-color: #ffffff;
-      padding: 80px 40px 100px 40px;
-
       h1 {
-        font-size: calc(1.5vw + 1.5vh + 3vmin);
+        text-align: center;
+        font-size: calc(1.5vw + 1.5vh + 6vmin);
+        font-family: var.$headings-font;
       }
 
-      .about {
-        font-size: calc(1.5vw + 1.5vh);
+      p {
+        font-size: calc(1.5vw + 1.5vh + 1vmin);
+        padding: 25px 0;
       }
 
       .references {
-        display: none;
+        text-align: center;
+
+        img {
+          width: 40px;
+        }
       }
+    }
+  }
+}
+
+@media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
+  header {
+    .background {
+      height: 80vw;
+      clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, 0% 74%);
     }
 
-    @keyframes growText {
-      0% {
-        font-size: calc(1.5vw + 1.5vh + 1vmin);
+    .info-container {
+      .image-container {
+        float: left;
+        box-shadow: none;
+        padding-right: 20px;
+        max-width: 40%;
+        margin: 0;
+        z-index: 1;
+
+        img {
+          width: 100%;
+        }
+
+        .name-container {
+          top: -5%;
+          left: 0;
+          padding: 0;
+          width: 300%;
+          text-align: unset;
+
+          .name {
+            font-size: calc(1.5vw + 1.5vh + 4vmin);
+          }
+        }
       }
-      100% {
-        font-size: calc(1.5vw + 1.5vh + 4vmin);
+
+      .about-container {
+        width: 90%;
+        padding: 40px 30px;
+        background-color: #f1f5f9;
+        margin-left: 70px;
+        transform: translateY(15%);
+
+        h1 {
+          font-size: calc(1.5vw + 1.5vh + 3vmin);
+          transform: translateY(-15%);
+          margin-bottom: 25px;
+        }
+
+        p {
+          font-size: calc(1.4vw + 1.4vh);
+          padding: 60px 0 0 0;
+          transform: translateY(-20%);
+        }
+
+        .about {
+          font-size: calc(1.5vw + 1.5vh);
+        }
+
+        .references {
+          display: none;
+        }
       }
     }
-    @keyframes slide {
-      0% {
-        opacity: 0;
-        left: 90%;
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  header {
+    padding: 40px 40px 0 40px;
+
+    .info-container {
+      display: flex;
+      align-items: center;
+
+      .background {
+        height: 35vw;
       }
-      100% {
-        opacity: 1;
-        left: 10%;
+
+      .image-container {
+        max-width: 28%;
+        margin: 0;
+
+        img {
+          width: 100%;
+        }
+
+        .name-container {
+          left: 0;
+          font-size: calc(1.5vw + 1.5vh + 1vmin);
+          padding: 10px;
+        }
+      }
+
+      .about-container {
+        background-color: #f1f5f9;
+        padding: 20px;
+        overflow: hidden;
+
+        h1 {
+          font-size: calc(1.5vw + 1.5vh + 0.5vmin);
+        }
+
+        p {
+          font-size: calc(1vw + 1vh);
+        }
+
+        .references {
+          text-align: right;
+        }
       }
     }
   }

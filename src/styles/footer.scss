@@ -34,10 +34,33 @@ footer {
 }
 
 @media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
-  main {
-    .projects-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 50px;
+  footer {
+    h1 {
+      font-size: calc(1.5vw + 1.5vh + 3vmin);
+    }
+
+    h2 {
+      font-size: calc(1.5vw + 1.5vh);
+      font-weight: 500;
+      line-height: 1.5em;
+    }
+  }
+}
+
+@media (min-width: var.$breakpoint-desktop) {
+  footer {
+    h1 {
+      font-size: calc(1.5vw + 1.5vh + 1vmin);
+    }
+
+    h2 {
+      font-size: calc(1.2vw + 1.2vh);
+      font-weight: 500;
+      line-height: 1.5em;
+    }
+
+    p {
+      font-size: calc(1.2vw + 1.2vh);
     }
   }
 }
