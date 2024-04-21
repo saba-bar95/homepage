@@ -35,7 +35,7 @@ header {
         font-family: var.$headings-font;
         padding: 15px 30px;
         width: 100%;
-        font-size: calc(1.5vw + 1.5vh + 6vmin);
+        font-size: 3rem;
         text-align: left;
       }
     }
@@ -43,12 +43,13 @@ header {
     .about-container {
       h1 {
         text-align: center;
-        font-size: calc(1.5vw + 1.5vh + 6vmin);
+        font-size: 3rem;
+
         font-family: var.$headings-font;
       }
 
       p {
-        font-size: calc(1.5vw + 1.5vh + 1vmin);
+        font-size: 1.8rem;
         padding: 25px 0;
       }
 
@@ -84,14 +85,14 @@ header {
         }
 
         .name-container {
-          top: -5%;
+          top: 0;
           left: 0;
           padding: 0;
           width: 300%;
           text-align: unset;
 
           .name {
-            font-size: calc(1.5vw + 1.5vh + 4vmin);
+            font-size: 3.2rem;
           }
         }
       }
@@ -104,19 +105,15 @@ header {
         transform: translateY(15%);
 
         h1 {
-          font-size: calc(1.5vw + 1.5vh + 3vmin);
+          font-size: 3rem;
           transform: translateY(-15%);
           margin-bottom: 25px;
         }
 
         p {
-          font-size: calc(1.4vw + 1.4vh);
+          font-size: 1.6rem;
           padding: 60px 0 0 0;
           transform: translateY(-20%);
-        }
-
-        .about {
-          font-size: calc(1.5vw + 1.5vh);
         }
 
         .references {
@@ -131,13 +128,13 @@ header {
   header {
     padding: 40px 40px 0 40px;
 
+    .background {
+      height: 35vw;
+    }
+
     .info-container {
       display: flex;
       align-items: center;
-
-      .background {
-        height: 35vw;
-      }
 
       .image-container {
         max-width: 28%;
@@ -149,7 +146,7 @@ header {
 
         .name-container {
           left: 0;
-          font-size: calc(1.5vw + 1.5vh + 1vmin);
+          font-size: 3.2rem;
           padding: 10px;
         }
       }
@@ -159,17 +156,32 @@ header {
         padding: 20px;
         overflow: hidden;
 
-        h1 {
-          font-size: calc(1.5vw + 1.5vh + 0.5vmin);
-        }
-
         p {
-          font-size: calc(1vw + 1vh);
+          font-size: 1.5rem;
         }
 
         .references {
           text-align: right;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 2000px) {
+  header {
+    display: flex;
+    justify-content: center;
+
+    .background {
+      height: 35vh;
+    }
+
+    .info-container {
+      max-width: 2000px;
+
+      .image-container {
+        max-width: 20%;
       }
     }
   }

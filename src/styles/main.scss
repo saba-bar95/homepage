@@ -4,7 +4,7 @@ main {
   padding: 0 40px;
 
   h1 {
-    font-size: calc(1.5vw + 1.5vh + 6vmin);
+    font-size: 3rem;
     text-align: center;
     color: var.$heading-dark-color;
     font-family: var.$headings-font;
@@ -37,6 +37,7 @@ main {
         .name {
           color: var.$heading-dark-color;
           font-family: var.$headings-font;
+          font-size: 1.8rem;
         }
 
         .links {
@@ -58,34 +59,27 @@ main {
 
 @media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
   main {
-    h1 {
-      font-size: calc(1.5vw + 1.5vh + 3vmin);
-    }
-
     .projects-container {
       grid-template-columns: repeat(2, 1fr);
       gap: 50px;
-
-      .name {
-        font-size: calc(1.5vw + 1.5vh);
-      }
     }
   }
 }
 
 @media (min-width: var.$breakpoint-desktop) {
   main {
-    h1 {
-      font-size: calc(1.5vw + 1.5vh + 1vmin);
-    }
-
     .projects-container {
       grid-template-columns: repeat(3, 1fr);
       gap: 100px;
+    }
+  }
+}
 
-      .name {
-        font-size: calc(1.2vw + 1.2vh);
-      }
+@media (min-width: 2000px) {
+  main {
+    .projects-container {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
     }
   }
 }
