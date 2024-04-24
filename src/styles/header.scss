@@ -1,4 +1,5 @@
 @use "variables" as var;
+@use "animations.scss";
 
 header {
   padding: 40px 40px 0 40px;
@@ -21,6 +22,7 @@ header {
       text-align: center;
       margin-bottom: 50px;
       position: relative;
+      animation: slideFromLeft 2s ease-out forwards;
 
       img {
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -34,23 +36,30 @@ header {
         color: var.$heading-light-color;
         font-family: var.$headings-font;
         padding: 15px 30px;
-        width: 100%;
-        font-size: 3rem;
+        width: 95%;
         text-align: left;
+        animation: growFontSize 2.3s ease-out forwards;
       }
     }
 
     .about-container {
+      position: relative;
+      animation: slideFromRight 2s ease-out forwards;
+
       h1 {
         text-align: center;
-        font-size: 3rem;
-
         font-family: var.$headings-font;
+        animation: growFontSize 2.3s ease-out forwards;
       }
 
       p {
         font-size: 1.8rem;
-        padding: 25px 0;
+        user-select: none;
+        padding-bottom: 15px;
+      }
+
+      p:first-of-type {
+        padding-top: 25px;
       }
 
       .references {
@@ -86,34 +95,31 @@ header {
 
         .name-container {
           top: 0;
-          left: 0;
+          left: -15%;
           padding: 0;
           width: 300%;
           text-align: unset;
-
-          .name {
-            font-size: 3.2rem;
-          }
         }
       }
 
       .about-container {
         width: 90%;
-        padding: 40px 30px;
+        padding: 100px 30px 40px 30px;
         background-color: #f1f5f9;
         margin-left: 70px;
         transform: translateY(15%);
 
+        .about-text {
+          transform: translateY(-18%);
+        }
+
         h1 {
-          font-size: 3rem;
-          transform: translateY(-15%);
-          margin-bottom: 25px;
+          transform: translateY(-130%);
         }
 
         p {
           font-size: 1.6rem;
-          padding: 60px 0 0 0;
-          transform: translateY(-20%);
+          // transform: translateY(-20%);
         }
 
         .references {
@@ -146,7 +152,6 @@ header {
 
         .name-container {
           left: 0;
-          font-size: 3.2rem;
           padding: 10px;
         }
       }
@@ -168,13 +173,13 @@ header {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: var.$breakpoint-ultrawide) {
   header {
     display: flex;
     justify-content: center;
 
     .background {
-      height: 35vh;
+      height: 30vh;
     }
 
     .info-container {

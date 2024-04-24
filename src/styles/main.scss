@@ -1,14 +1,16 @@
 @use "variables" as var;
+@use "animations.scss";
 
 main {
   padding: 0 40px;
 
   h1 {
-    font-size: 3rem;
     text-align: center;
     color: var.$heading-dark-color;
     font-family: var.$headings-font;
     padding-bottom: 30px;
+    position: relative;
+    animation: growFontSize 2s ease-out forwards;
   }
 
   .projects-container {
@@ -75,7 +77,7 @@ main {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: var.$breakpoint-ultrawide) {
   main {
     .projects-container {
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

@@ -1,0 +1,30 @@
+@keyframes slideFromRight {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes growFontSize {
+  0% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 3rem;
+  }
+}
