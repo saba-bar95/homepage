@@ -1,5 +1,5 @@
 import "./index.scss";
-import createProjects from "./components/projects/createProject";
+import createProjects from "./components/createProject";
 
 createProjects();
 
