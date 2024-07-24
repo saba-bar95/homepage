@@ -7,14 +7,16 @@ import calculatorIMG from "/src/assets/images/screenshots/calculator.png";
 import etchASkatchIMG from "/src/assets/images/screenshots/etch-a-skatch.png";
 import adminDashboardIMG from "/src/assets/images/screenshots/admin-dashboard.png";
 import liveImg from "/src/assets/images/links/external-link.png";
+import memoryCardImg from "/src/assets/images/screenshots/memory-card.png";
 
 const imageMap = {
   "CV-application": cvApplicationImg,
   "todo-list": todoListIMG,
   "weather-app": weatherAppIMG,
+  "memory-card": memoryCardImg,
   calculator: calculatorIMG,
-  "etch-a-sketch": etchASkatchIMG,
   "admin-dashboard": adminDashboardIMG,
+  "etch-a-sketch": etchASkatchIMG,
 };
 
 export default function createProjects() {
@@ -22,14 +24,16 @@ export default function createProjects() {
     "CV-application",
     "todo-list",
     "weather-app",
+    "memory-card",
     "calculator",
-    "etch-a-sketch",
     "admin-dashboard",
+    "etch-a-sketch",
   ];
 
   const projectsContainer = document.querySelector(".projects-container");
 
   projects.forEach((el) => {
+    if (el === "etch-a-sketch") return;
     const project = document.createElement("div");
     project.classList.add("project");
     projectsContainer.appendChild(project);
@@ -75,7 +79,10 @@ export default function createProjects() {
 
     if (el === "CV-application")
       liveLink.href = "https://cv-app-pi.vercel.app/";
-    if (el !== "CV-application") {
+    if (el === "memory-card")
+      liveLink.href = "https://memory-card-alpha-bay.vercel.app/";
+
+    if (el !== "CV-application" && el !== "memory-card") {
       liveLink.href = `https://saba-bar95.github.io/${el}/`;
     }
     liveLink.target = "_blank";
