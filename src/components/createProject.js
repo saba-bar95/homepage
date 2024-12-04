@@ -8,32 +8,52 @@ import etchASkatchIMG from "/src/assets/images/screenshots/etch-a-skatch.png";
 import adminDashboardIMG from "/src/assets/images/screenshots/admin-dashboard.png";
 import liveImg from "/src/assets/images/links/external-link.png";
 import memoryCardImg from "/src/assets/images/screenshots/memory-card.png";
+import censusImg from "/src/assets/images/screenshots/census-2024.png";
+import shoppingCartImg from "/src/assets/images/screenshots/shopping-cart.png";
 
 const imageMap = {
+  "census-2024": censusImg,
+  "shopping-cart": shoppingCartImg,
   "CV-application": cvApplicationImg,
   "todo-list": todoListIMG,
-  "weather-app": weatherAppIMG,
   "memory-card": memoryCardImg,
-  calculator: calculatorIMG,
+  "weather-app": weatherAppIMG,
   "admin-dashboard": adminDashboardIMG,
   "etch-a-sketch": etchASkatchIMG,
+  calculator: calculatorIMG,
 };
 
-export default function createProjects() {
-  const projects = [
-    "CV-application",
-    "todo-list",
-    "weather-app",
-    "memory-card",
-    "calculator",
-    "admin-dashboard",
-    "etch-a-sketch",
-  ];
+const pageLinks = {
+  "census-2024": "https://census-2024.vercel.app/",
+  "shopping-cart": "https://shopping-cart-three-ivory.vercel.app/",
+  "CV-application": "https://cv-app-pi.vercel.app/",
+  "memory-card": "https://memory-card-alpha-bay.vercel.app/",
+};
 
+const projects = [
+  "census-2024",
+  "shopping-cart",
+  "CV-application",
+  "todo-list",
+  "memory-card",
+  "weather-app",
+  "admin-dashboard",
+  "calculator",
+  "etch-a-sketch",
+];
+
+export default function createProjects() {
   const projectsContainer = document.querySelector(".projects-container");
 
   projects.forEach((el) => {
-    if (el === "etch-a-sketch") return;
+    if (
+      el === "etch-a-sketch" ||
+      el === "admin-dashboard" ||
+      el === "calculator"
+    ) {
+      return;
+    }
+
     const project = document.createElement("div");
     project.classList.add("project");
     projectsContainer.appendChild(project);
@@ -70,21 +90,12 @@ export default function createProjects() {
     links.appendChild(ghLink);
 
     const github = new Image();
-
     github.src =
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg";
     ghLink.appendChild(github);
 
     const liveLink = document.createElement("a");
-
-    if (el === "CV-application")
-      liveLink.href = "https://cv-app-pi.vercel.app/";
-    if (el === "memory-card")
-      liveLink.href = "https://memory-card-alpha-bay.vercel.app/";
-
-    if (el !== "CV-application" && el !== "memory-card") {
-      liveLink.href = `https://saba-bar95.github.io/${el}/`;
-    }
+    liveLink.href = pageLinks[el] || `https://saba-ba95.github.io/${el}/`;
     liveLink.target = "_blank";
     links.appendChild(liveLink);
 
