@@ -46,6 +46,10 @@ header {
       position: relative;
       animation: slideFromRight 2s ease-out forwards;
 
+      a {
+        color: inherit;
+      }
+
       h1 {
         text-align: center;
         font-family: var.$headings-font;
