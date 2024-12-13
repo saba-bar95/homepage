@@ -58,7 +58,6 @@ header {
 
       p {
         font-size: 1.3rem;
-        user-select: none;
         padding-bottom: 15px;
       }
 
@@ -71,6 +70,11 @@ header {
 
         img {
           width: 40px;
+          transition: transform 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }
@@ -112,6 +116,10 @@ header {
         background-color: #f1f5f9;
         margin-left: 70px;
         transform: translateY(15%);
+
+        p {
+          user-select: none;
+        }
 
         .about-text {
           transform: translateY(-18%);

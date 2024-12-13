@@ -25,11 +25,26 @@ footer {
     font-size: 1.2rem;
   }
 
+  a {
+    color: #f1f5f9;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
   .github-text {
     text-align: center;
 
     img {
       width: 60px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

@@ -21,11 +21,11 @@ body {
 
 .landmark {
   opacity: 0;
-  transition: opacity 1s ease-in-out 0.5s;
 }
 
 .visible {
   opacity: 1 !important;
+  transition: opacity 1s ease-in-out;
 }
 
 @media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {

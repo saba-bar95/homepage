@@ -95,7 +95,7 @@ export default function createProjects() {
     ghLink.appendChild(github);
 
     const liveLink = document.createElement("a");
-    liveLink.href = pageLinks[el] || `https://saba-ba95.github.io/${el}/`;
+    liveLink.href = pageLinks[el] || `https://saba-bar95.github.io/${el}/`;
     liveLink.target = "_blank";
     links.appendChild(liveLink);
 
