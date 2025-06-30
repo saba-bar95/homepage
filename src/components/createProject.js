@@ -10,8 +10,10 @@ import liveImg from "/src/assets/images/links/external-link.png";
 import memoryCardImg from "/src/assets/images/screenshots/memory-card.png";
 import censusImg from "/src/assets/images/screenshots/census-2024.png";
 import shoppingCartImg from "/src/assets/images/screenshots/shopping-cart.png";
+import energyStatisticsPortalImg from "/src/assets/images/screenshots/energy-statistics-portal.png";
 
 const imageMap = {
+  "enery-statistics-portal": energyStatisticsPortalImg,
   "census-2024": censusImg,
   "shopping-cart": shoppingCartImg,
   "CV-application": cvApplicationImg,
@@ -24,6 +26,7 @@ const imageMap = {
 };
 
 const pageLinks = {
+  "enery-statistics-portal": "https://energy-portal-seven.vercel.app/",
   "census-2024": "https://census-2024.vercel.app/",
   "shopping-cart": "https://shopping-cart-three-ivory.vercel.app/",
   "CV-application": "https://cv-app-pi.vercel.app/",
@@ -31,6 +34,7 @@ const pageLinks = {
 };
 
 const projects = [
+  "enery-statistics-portal",
   "census-2024",
   "shopping-cart",
   "CV-application",
@@ -49,7 +53,8 @@ export default function createProjects() {
     if (
       el === "etch-a-sketch" ||
       el === "admin-dashboard" ||
-      el === "calculator"
+      el === "calculator" ||
+      el === "weather-app"
     ) {
       return;
     }
@@ -81,11 +86,18 @@ export default function createProjects() {
     projectInfo.appendChild(links);
 
     const ghLink = document.createElement("a");
-    if (el === "CV-application")
-      ghLink.href = `https://github.com/saba-bar95/cv-app`;
-    if (el !== "CV-application") {
-      ghLink.href = `https://github.com/saba-bar95/${el}`;
+
+    switch (el) {
+      case "enery-statistics-portal":
+        ghLink.href = "https://github.com/saba-bar95/energy-portal";
+        break;
+      case "CV-application":
+        ghLink.href = "https://github.com/saba-bar95/cv-app";
+        break;
+      default:
+        ghLink.href = `https://github.com/saba-bar95/${el}`;
     }
+
     ghLink.target = "_blank";
     links.appendChild(ghLink);
 
