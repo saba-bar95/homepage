@@ -38,7 +38,7 @@ header {
         padding: 15px 30px;
         width: 95%;
         text-align: left;
-        animation: growFontSize 2.3s ease-out forwards;
+        animation: growNameFontSize 2.3s ease-out forwards;
       }
     }
 
@@ -57,12 +57,12 @@ header {
       }
 
       p {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         padding-bottom: 15px;
       }
 
       p:first-of-type {
-        padding-top: 25px;
+        padding-top: 15px;
       }
 
       .references {
@@ -169,7 +169,7 @@ header {
         overflow: hidden;
 
         p {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
 
         .references {

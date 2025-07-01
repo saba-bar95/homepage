@@ -52,6 +52,7 @@ main {
           color: var.$heading-dark-color;
           font-size: 1.3rem;
           font-family: FiraGOReg;
+          text-transform: capitalize;
         }
 
         .links {
@@ -86,7 +87,7 @@ main {
   main {
     .projects-container {
       grid-template-columns: repeat(3, 1fr);
-      gap: 100px;
+      gap: 70px;
 
       .project {
         .project-info {
