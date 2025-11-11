@@ -59,7 +59,8 @@ header {
       h1 {
         text-align: center;
         font-family: var.$headings-font;
-        animation: growAboutFontSizeMobile 2.3s ease-out forwards;
+        // animation: growAboutFontSizeMobile 2.3s ease-out forwards;
+        font-size: 1.6rem;
       }
 
       p {
@@ -90,42 +91,50 @@ header {
 
 @media (min-width: var.$breakpoint-tablet) and (max-width: var.$breakpoint-desktop) {
   header {
+    display: flex;
+
     .background {
-      height: 80vw;
-      clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, 0% 74%);
+      height: 100vw;
+      clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, 0% 43%);
     }
 
     .info-container {
+      width: 60%;
+
       .image-container {
         float: left;
         box-shadow: none;
         padding-right: 20px;
-        max-width: 40%;
+        max-width: 60%;
         margin: 0;
         z-index: 1;
 
         img {
           width: 100%;
+          max-width: 350px;
         }
 
         .name-container {
           top: 0;
-          left: -15%;
+          margin-left: -12%;
           padding: 0;
           width: 300%;
           text-align: unset;
+          font-size: clamp(1rem, 3.6vw + 0.5rem, 2.2rem);
+          transform: translateY(25px);
         }
       }
 
       .about-container {
-        width: 90%;
-        padding: 100px 30px 40px 30px;
+        padding: 50px 20px 20px 20px;
         background-color: #f1f5f9;
         margin-left: 70px;
         transform: translateY(15%);
+        // max-width: 600px;
 
         p {
           user-select: none;
+          font-size: 1.1rem;
         }
 
         .about-text {
@@ -134,6 +143,7 @@ header {
 
         h1 {
           transform: translateY(-130%);
+          margin-bottom: 40px;
         }
 
         .references {

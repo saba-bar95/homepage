@@ -19,7 +19,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    max-width: 300px;
+    // max-width: 300px;
     // width: 85%;
     margin: auto;
 
@@ -28,7 +28,7 @@ main {
       border-radius: 10px;
       opacity: 0;
       transition: opacity 1s ease-in-out 0.5s;
-      max-width: 500px;
+      max-width: 250px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -88,6 +88,20 @@ main {
     .projects-container {
       grid-template-columns: repeat(2, 1fr);
       gap: 50px;
+
+      .project {
+        max-width: 300px;
+
+        .screenshot {
+          max-height: fit-content;
+        }
+
+        .project-info {
+          .name {
+            font-size: 1.15rem;
+          }
+        }
+      }
     }
   }
 }
@@ -99,6 +113,8 @@ main {
       gap: 70px;
 
       .project {
+        max-width: 400px;
+
         .project-info {
           .name {
             font-size: 1.3rem;
