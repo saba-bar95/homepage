@@ -11,8 +11,10 @@ import memoryCardImg from "/src/assets/images/screenshots/memory-card.png";
 import censusImg from "/src/assets/images/screenshots/census-2024.png";
 import shoppingCartImg from "/src/assets/images/screenshots/shopping-cart.png";
 import energyStatisticsPortalImg from "/src/assets/images/screenshots/energy-statistics-portal.png";
+import environmentalStatisticsPortal from "/src/assets/images/screenshots/environmental-statistics-portal.png";
 
 const imageMap = {
+  "environmental-statistics-portal": environmentalStatisticsPortal,
   "enery-statistics-portal": energyStatisticsPortalImg,
   "census-2024": censusImg,
   "shopping-cart": shoppingCartImg,
@@ -26,6 +28,8 @@ const imageMap = {
 };
 
 const pageLinks = {
+  "environmental-statistics-portal":
+    "https://environment-statistics-portal.vercel.app",
   "enery-statistics-portal": "https://energy-portal-seven.vercel.app/",
   "census-2024": "https://census-2024.vercel.app/",
   "shopping-cart": "https://shopping-cart-three-ivory.vercel.app/",
@@ -34,6 +38,7 @@ const pageLinks = {
 };
 
 const projects = [
+  "environmental-statistics-portal",
   "enery-statistics-portal",
   "census-2024",
   "shopping-cart",
@@ -50,15 +55,6 @@ export default function createProjects() {
   const projectsContainer = document.querySelector(".projects-container");
 
   projects.forEach((el) => {
-    if (
-      el === "etch-a-sketch" ||
-      el === "admin-dashboard" ||
-      el === "calculator" ||
-      el === "weather-app"
-    ) {
-      return;
-    }
-
     const project = document.createElement("div");
     project.classList.add("project");
     projectsContainer.appendChild(project);
@@ -88,6 +84,9 @@ export default function createProjects() {
     const ghLink = document.createElement("a");
 
     switch (el) {
+      case "environmental-statistics-portal":
+        ghLink.href = "https://github.com/saba-bar95/environment";
+        break;
       case "enery-statistics-portal":
         ghLink.href = "https://github.com/saba-bar95/energy-portal";
         break;
