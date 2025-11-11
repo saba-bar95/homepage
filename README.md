@@ -21,7 +21,7 @@ Homepage, where appears a brief information about me and the projects I've done 
 - Eslint
 - Prettier
 
-### [Live URL](https://saba-bar95.github.io/homepage/)
+### [Live URL](https://homepage-jade-one.vercel.app/)
 
 ### Author
 
