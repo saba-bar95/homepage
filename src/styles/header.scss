@@ -7,7 +7,6 @@ header {
   position: relative;
 
   .background {
-    background-color: #0891b2;
     width: 100%;
     position: absolute;
     top: 0;
@@ -16,6 +15,19 @@ header {
     height: 100vw;
     max-height: 1400px;
     clip-path: polygon(0% 30%, 0% 0%, 227.5% 0%, 0% 43%);
+    background: linear-gradient(135deg, #0c4a6e 0%, #0891b2 50%, #22d3ee 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+
+    @keyframes gradientShift {
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
   }
 
   .info-container {
@@ -45,6 +57,13 @@ header {
         padding: 15px 30px;
         width: 100%;
         font-size: clamp(1rem, 3.6vw + 0.3rem, 2.5rem);
+        pointer-events: none;
+
+        span {
+          pointer-events: auto; // Only the text is selectable
+          user-select: text;
+          -webkit-user-select: text;
+        }
       }
     }
 
@@ -68,6 +87,11 @@ header {
         font-size: 0.9rem;
         padding-bottom: 10px;
         hyphens: auto;
+
+        a {
+          text-decoration: none;
+          font-weight: 600;
+        }
       }
 
       p:first-of-type {
@@ -133,7 +157,6 @@ header {
         transform: translateY(15%);
 
         p {
-          user-select: none;
           font-size: 1.1rem;
         }
 
@@ -143,7 +166,7 @@ header {
 
         h1 {
           transform: translateY(-130%);
-          margin-bottom: 40px;
+          margin-bottom: 110px;
         }
 
         .references {
@@ -195,10 +218,8 @@ header {
         background-color: #f1f5f9;
         margin-left: 70px;
         transform: translateY(15%);
-        // max-width: 600px;
 
         p {
-          user-select: none;
           font-size: 1.1rem;
         }
 
@@ -208,7 +229,7 @@ header {
 
         h1 {
           transform: translateY(-130%);
-          margin-bottom: 40px;
+          margin-bottom: 80px;
         }
 
         .references {
