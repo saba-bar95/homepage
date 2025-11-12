@@ -100,6 +100,12 @@ main {
           .name {
             font-size: 1.15rem;
           }
+
+          .links {
+            img {
+              width: 18px;
+            }
+          }
         }
       }
     }
@@ -108,16 +114,29 @@ main {
 
 @media (min-width: var.$breakpoint-desktop) {
   main {
+    h1 {
+      font-size: 2rem;
+    }
+    padding: 0 50px;
     .projects-container {
       grid-template-columns: repeat(3, 1fr);
-      gap: 70px;
+      gap: 40px;
 
       .project {
-        max-width: 400px;
+        max-width: 350px;
+
+        .screenshot {
+          max-height: fit-content;
+        }
 
         .project-info {
           .name {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+          }
+          .links {
+            img {
+              width: 20px;
+            }
           }
         }
       }
@@ -127,17 +146,22 @@ main {
 
 @media (min-width: var.$breakpoint-ultrawide) {
   main {
+    h1 {
+      font-size: 2.5rem;
+    }
     .projects-container {
-      gap: 40px;
+      gap: 50px;
 
       .project {
-        .screenshot {
-          min-height: 5vh;
-        }
-
         .project-info {
           .name {
             font-size: 1.5rem;
+          }
+
+          .links {
+            img {
+              width: 22px;
+            }
           }
         }
       }

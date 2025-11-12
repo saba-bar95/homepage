@@ -49,3 +49,15 @@ footer {
     }
   }
 }
+
+@media (min-width: var.$breakpoint-desktop) {
+  footer {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
