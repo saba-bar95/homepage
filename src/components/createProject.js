@@ -12,6 +12,7 @@ import censusImg from "/src/assets/images/screenshots/census-2024.png";
 import shoppingCartImg from "/src/assets/images/screenshots/shopping-cart.png";
 import energyStatisticsPortalImg from "/src/assets/images/screenshots/energy-statistics-portal.png";
 import environmentalStatisticsPortal from "/src/assets/images/screenshots/environmental-statistics-portal.png";
+import libraryImg from "/src/assets/images/screenshots/library.png";
 
 const imageMap = {
   "environmental-statistics-portal": environmentalStatisticsPortal,
@@ -25,6 +26,7 @@ const imageMap = {
   "admin-dashboard": adminDashboardIMG,
   "etch-a-sketch": etchASkatchIMG,
   calculator: calculatorIMG,
+  library: libraryImg,
 };
 
 const pageLinks = {
@@ -46,6 +48,7 @@ const projects = [
   "todo-list",
   "memory-card",
   "weather-app",
+  "library",
   "admin-dashboard",
   "calculator",
   "etch-a-sketch",
