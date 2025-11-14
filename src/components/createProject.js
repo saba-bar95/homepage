@@ -31,9 +31,9 @@ const imageMap = {
 
 const pageLinks = {
   "environmental-statistics-portal":
-    "https://environment-statistics-portal.vercel.app",
-  "enery-statistics-portal": "https://energy-portal-seven.vercel.app/",
-  "census-2024": "https://census-2024.vercel.app/",
+    "https://environment-statistics-portal.vercel.app/en",
+  "enery-statistics-portal": "https://energy-portal-seven.vercel.app/en",
+  "census-2024": "https://census-2024.vercel.app/en",
   "shopping-cart": "https://shopping-cart-three-ivory.vercel.app/",
   "CV-application": "https://cv-app-pi.vercel.app/",
   "memory-card": "https://memory-card-alpha-bay.vercel.app/",
