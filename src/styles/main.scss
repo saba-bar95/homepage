@@ -19,8 +19,6 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    // max-width: 300px;
-    // width: 85%;
     margin: auto;
 
     .project {
@@ -40,7 +38,6 @@ main {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         max-height: 18vh;
-        min-height: 10vh;
       }
 
       .project-info {
@@ -56,7 +53,6 @@ main {
         .name {
           color: var.$heading-dark-color;
           font-size: 1rem;
-          // font-family: FiraGOReg;
           text-transform: capitalize;
         }
 
@@ -155,7 +151,7 @@ main {
       .project {
         .project-info {
           .name {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
 
           .links {
