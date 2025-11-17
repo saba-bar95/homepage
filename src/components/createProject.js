@@ -13,6 +13,7 @@ import shoppingCartImg from "/src/assets/images/screenshots/shopping-cart.png";
 import energyStatisticsPortalImg from "/src/assets/images/screenshots/energy-statistics-portal.png";
 import environmentalStatisticsPortal from "/src/assets/images/screenshots/environmental-statistics-portal.png";
 import libraryImg from "/src/assets/images/screenshots/library.png";
+import businessStatisticsMapImg from "/src/assets/images/screenshots/business-statistics-map.png";
 
 const imageMap = {
   "environmental-statistics-portal": environmentalStatisticsPortal,
@@ -27,6 +28,7 @@ const imageMap = {
   "etch-a-sketch": etchASkatchIMG,
   calculator: calculatorIMG,
   library: libraryImg,
+  "business-statistics-map": businessStatisticsMapImg,
 };
 
 const pageLinks = {
@@ -37,11 +39,13 @@ const pageLinks = {
   "shopping-cart": "https://shopping-cart-three-ivory.vercel.app/",
   "CV-application": "https://cv-app-pi.vercel.app/",
   "memory-card": "https://memory-card-alpha-bay.vercel.app/",
+  "business-statistics-map": "https://business-statistics-map.vercel.app/en",
 };
 
 const projects = [
   "environmental-statistics-portal",
   "enery-statistics-portal",
+  "business-statistics-map",
   "census-2024",
   "shopping-cart",
   "CV-application",
